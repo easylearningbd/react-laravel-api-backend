@@ -43,12 +43,17 @@
         <span class="ml-2">Logout </span>
     </a>
 
+    @php
+
+        $id = Auth::user()->id;
+        $user = App\Models\User::find($id);
+    @endphp
                           
 
                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                    <img src="{{ asset('backend/images/profile/pic1.jpg') }}" width="20" alt=""/>
+          <img src="{{ (!empty($user->profile_photo_path))?url('upload/user_images/'.$user->profile_photo_path):url('upload/no_image.jpg') }}" width="20" alt=""/>
 					<div class="header-info">
-						<span>Johndoe</span>
+						<span>{{ $user->name }}</span>
 						<small>Super Admin</small>
 					</div>
                 </a>
