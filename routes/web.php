@@ -31,5 +31,7 @@ Route::get('/user/profile',[AdminUserController::class, 'UserProfile'])->name('u
 
 Route::get('/user/profile/edit',[AdminUserController::class, 'UserProfileEdit'])->name('user.profile.edit');
 
+Route::post('/user/profile/store',[AdminUserController::class, 'UserProfileStore'])->name('user.profile.store');
+
 });
 

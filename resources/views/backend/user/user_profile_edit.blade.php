@@ -48,14 +48,15 @@
                             <div class="card-body">
                                 <div class="basic-form">
 
-        <form>
+        <form method="post" action="{{ route('user.profile.store') }}" enctype="multipart/form-data">
+        	@csrf
 
             <div class="form-group">
-                <input type="text" class="form-control input-default " placeholder="input-default" value="{{ $user->name }}">
+                <input type="text" name="name" class="form-control input-default " placeholder="input-default" value="{{ $user->name }}">
             </div>
 
              <div class="form-group">
-                <input type="text" class="form-control input-default " placeholder="input-default" value="{{ $user->email }}">
+                <input type="text" name="email" class="form-control input-default " placeholder="input-default" value="{{ $user->email }}">
             </div>
 
 
@@ -64,7 +65,7 @@
                  <span class="input-group-text">Upload</span>
                 </div>
                 <div class="custom-file">
-        <input type="file" class="custom-file-input" id="image">
+        <input type="file" name="profile_photo_path" class="custom-file-input" id="image">
                     <label class="custom-file-label">Choose file</label>
                 </div>
             </div>
