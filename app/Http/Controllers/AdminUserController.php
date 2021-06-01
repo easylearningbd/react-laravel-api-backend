@@ -24,6 +24,14 @@ class AdminUserController extends Controller
     } // en mehtod 
 
 
+    public function UserProfileEdit(){
+    	$id = Auth::user()->id;
+    	$user = User::find($id);
+
+    	return view('backend.user.user_profile_edit',compact('user'));
+
+    } // end mehtod 
+
 
 
 }

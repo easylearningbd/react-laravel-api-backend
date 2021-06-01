@@ -29,5 +29,7 @@ Route::prefix('admin')->group(function(){
 
 Route::get('/user/profile',[AdminUserController::class, 'UserProfile'])->name('user.profile');
 
+Route::get('/user/profile/edit',[AdminUserController::class, 'UserProfileEdit'])->name('user.profile.edit');
+
 });
 
