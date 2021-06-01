@@ -23,3 +23,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
  
 Route::get('/logout',[AdminUserController::class, 'AdminLogout'])->name('admin.logout');
+
+
+Route::prefix('admin')->group(function(){
+
+Route::get('/user/profile',[AdminUserController::class, 'UserProfile'])->name('user.profile');
+
+});
+
