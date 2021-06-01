@@ -1,11 +1,10 @@
   <div class="deznav">
             <div class="deznav-scroll">
-				<div class="main-profile">
-					<img src="images/Untitled-1.jpg" alt="">
-					<a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
-					<h5 class="mb-0 fs-20 text-black "><span class="font-w400">Hello,</span> Marquez</h5>
-					<p class="mb-0 fs-14 font-w400">marquezzzz@mail.com</p>
-				</div>
+				 
+
+
+
+
 				<ul class="metismenu" id="menu">
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-144-layout"></i>
@@ -106,50 +105,16 @@
 							<span class="nav-text">Widget</span>
 						</a>
 					</li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-044-file"></i>
-							<span class="nav-text">Forms</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="./form-element.html">Form Elements</a></li>
-                            <li><a href="./form-wizard.html">Wizard</a></li>
-                            <li><a href="./form-editor-summernote.html">Summernote</a></li>
-                            <li><a href="form-pickers.html">Pickers</a></li>
-                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-381-network"></i>
-							<span class="nav-text">Table</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                            <li><a href="table-datatable-basic.html">Datatable</a></li>
-                        </ul>
-                    </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
-							<i class="flaticon-049-copy"></i>
-							<span class="nav-text">Pages</span>
-						</a>
-                        <ul aria-expanded="false">
-                            <li><a href="./page-register.html">Register</a></li>
-                            <li><a href="./page-login.html">Login</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
-                                <ul aria-expanded="false">
-                                    <li><a href="./page-error-400.html">Error 400</a></li>
-                                    <li><a href="./page-error-403.html">Error 403</a></li>
-                                    <li><a href="./page-error-404.html">Error 404</a></li>
-                                    <li><a href="./page-error-500.html">Error 500</a></li>
-                                    <li><a href="./page-error-503.html">Error 503</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./page-lock-screen.html">Lock Screen</a></li>
+                     
+                    
+                    
+                             
                         </ul>
                     </li>
                 </ul>
 				<div class="copyright">
-					<p><strong>Zenix Crypto Admin Dashboard</strong> © 2021 All Rights Reserved</p>
-					<p class="fs-12">Made with <span class="heart"></span> by DexignZone</p>
+					<p><strong>Easy React Admin Dashboard</strong> © 2021 All Rights Reserved</p>
+					<p class="fs-12">Made with <span class="heart"></span> by EasyLearningbd</p>
 				</div>
 			</div>
         </div>
