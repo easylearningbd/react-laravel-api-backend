@@ -45,7 +45,7 @@
                             <div class="card-body">
                                 <div class="basic-form">
 
-        <form method="post" action="{{ route('user.profile.store') }}" >
+        <form method="post" action="{{ route('change.password.update') }}" >
         	@csrf
 
             <div class="form-group">

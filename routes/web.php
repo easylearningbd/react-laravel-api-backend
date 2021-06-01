@@ -35,5 +35,7 @@ Route::post('/user/profile/store',[AdminUserController::class, 'UserProfileStore
 
 Route::get('/change/password',[AdminUserController::class, 'UserChangePassword'])->name('change.password');
 
+Route::post('/change/password/update',[AdminUserController::class, 'UserPasswordUpdate'])->name('change.password.update');
+
 });
 
