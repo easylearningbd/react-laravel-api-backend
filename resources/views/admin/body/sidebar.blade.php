@@ -25,7 +25,7 @@
                         </a>
                         <ul aria-expanded="false">
                 <li><a href="{{ route('user.profile') }}">User Profile</a></li>
-              <li><a href="index.html">Change Password</a></li>
+              <li><a href="{{ route('change.password') }}">Change Password</a></li>
                              
                         </ul>
 
