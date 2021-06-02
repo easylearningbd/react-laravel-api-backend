@@ -50,6 +50,10 @@ Route::get('/add',[InformationController::class, 'AddInformation'])->name('add.i
 
 Route::post('/store',[InformationController::class, 'StoreInformation'])->name('information.store');
 
- 
+Route::get('/edit/{id}',[InformationController::class, 'EditInformation'])->name('edit.information');
+
+Route::post('/update/{id}',[InformationController::class, 'UpdateInformation'])->name('information.update');
+
+Route::get('/delete/{id}',[InformationController::class, 'DeleteInformation'])->name('delete.information'); 
 
 });
