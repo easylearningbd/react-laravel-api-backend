@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\Admin\InformationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,12 @@ Route::post('/change/password/update',[AdminUserController::class, 'UserPassword
 
 });
 
+
+ // Information All Routes 
+Route::prefix('information')->group(function(){
+
+Route::get('/all',[InformationController::class, 'AllInformation'])->name('all.information');
+
+ 
+
+});
