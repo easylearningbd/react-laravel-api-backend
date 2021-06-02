@@ -46,6 +46,8 @@ Route::prefix('information')->group(function(){
 
 Route::get('/all',[InformationController::class, 'AllInformation'])->name('all.information');
 
+Route::get('/add',[InformationController::class, 'AddInformation'])->name('add.information');
+
  
 
 });

@@ -23,7 +23,9 @@ class InformationController extends Controller
 
 
 
-
+    public function AddInformation(){
+    	return view('backend.information.add_information');
+    } // end method 
 
 
 }

@@ -39,7 +39,7 @@
                         </a>
                         <ul aria-expanded="false">
                 <li><a href="{{ route('all.information') }}">All Information</a></li>
-              <li><a href="{{ route('change.password') }}">Add Information </a></li>
+              <li><a href="{{ route('add.information') }}">Add Information </a></li>
                              
                         </ul>
 
