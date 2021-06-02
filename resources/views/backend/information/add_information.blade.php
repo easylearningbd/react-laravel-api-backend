@@ -44,29 +44,29 @@
                             <div class="card-body">
                                 <div class="basic-form">
 
-        <form method="post" action="{{ route('change.password.update') }}" >
+        <form method="post" action="{{ route('information.store') }}" >
         	@csrf
 
             <div class="form-group">
                 <label class="info-title">About Information </label>
-                <textarea class="form-control" name="summernote" id="summernote"></textarea>
+                <textarea class="form-control" name="about" id="summernote"></textarea>
             </div>
 
    <div class="form-group">
                 <label class="info-title">Refund Policy</label>
-               <textarea class="form-control" name="summernote" id="summernote2"></textarea>
+               <textarea class="form-control" name="refund" id="summernote2"></textarea>
             </div>
 
                <div class="form-group">
                 <label class="info-title">Trems And Condition</label>
-                <textarea class="form-control" name="summernote" id="summernote3"></textarea>
+                <textarea class="form-control" name="trems" id="summernote3"></textarea>
             </div>    
 
 
 
              <div class="form-group">
                 <label class="info-title">Privacy And Policy</label>
-                <textarea class="form-control" name="summernote" id="summernote4"></textarea>
+                <textarea class="form-control" name="privacy" id="summernote4"></textarea>
             </div>           
  
 

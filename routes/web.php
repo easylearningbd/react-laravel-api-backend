@@ -48,6 +48,8 @@ Route::get('/all',[InformationController::class, 'AllInformation'])->name('all.i
 
 Route::get('/add',[InformationController::class, 'AddInformation'])->name('add.information');
 
+Route::post('/store',[InformationController::class, 'StoreInformation'])->name('information.store');
+
  
 
 });

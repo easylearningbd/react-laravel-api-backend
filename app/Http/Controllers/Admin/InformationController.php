@@ -28,5 +28,24 @@ class InformationController extends Controller
     } // end method 
 
 
+    public function StoreInformation(Request $request){
+      
+       Information::insert([
+       	'about' => $request->about,
+       	'refund' => $request->refund,
+       	'trems' => $request->trems,
+       	'privacy' => $request->privacy,
+
+       ]);
+       $notification = array(
+    		'message' => 'Information Inserted Successfully',
+    		'alert-type' => 'success'
+    	);
+
+    	return redirect()->route('all.information')->with($notification);
+
+    } // end method 
+
+
 }
  
