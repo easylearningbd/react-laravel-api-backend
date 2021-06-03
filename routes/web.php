@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\Admin\InformationController;
+use App\Http\Controllers\Admin\ServiceController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +47,25 @@ Route::post('/change/password/update',[AdminUserController::class, 'UserPassword
 Route::prefix('information')->group(function(){
 
 Route::get('/all',[InformationController::class, 'AllInformation'])->name('all.information');
+
+Route::get('/add',[InformationController::class, 'AddInformation'])->name('add.information');
+
+Route::post('/store',[InformationController::class, 'StoreInformation'])->name('information.store');
+
+Route::get('/edit/{id}',[InformationController::class, 'EditInformation'])->name('edit.information');
+
+Route::post('/update/{id}',[InformationController::class, 'UpdateInformation'])->name('information.update');
+
+Route::get('/delete/{id}',[InformationController::class, 'DeleteInformation'])->name('delete.information'); 
+
+});
+
+
+
+ // Services All Routes 
+Route::prefix('service')->group(function(){
+
+Route::get('/all',[ServiceController::class, 'AllService'])->name('all.services');
 
 Route::get('/add',[InformationController::class, 'AddInformation'])->name('add.information');
 

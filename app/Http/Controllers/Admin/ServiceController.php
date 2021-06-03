@@ -15,5 +15,11 @@ class ServiceController extends Controller
 
     } // end method 
 
- 
+
+    public function AllService(){
+    	$service = Services::all();
+    	return view('backend.service.all_service',compact('service'));
+    } // end method 
+
+   
 }
