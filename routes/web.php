@@ -67,9 +67,9 @@ Route::prefix('service')->group(function(){
 
 Route::get('/all',[ServiceController::class, 'AllService'])->name('all.services');
 
-Route::get('/add',[InformationController::class, 'AddInformation'])->name('add.information');
+Route::get('/add',[ServiceController::class, 'AddService'])->name('add.services');
 
-Route::post('/store',[InformationController::class, 'StoreInformation'])->name('information.store');
+Route::post('/store',[ServiceController::class, 'StoreService'])->name('service.store');
 
 Route::get('/edit/{id}',[InformationController::class, 'EditInformation'])->name('edit.information');
 

@@ -54,7 +54,7 @@
                         </a>
                         <ul aria-expanded="false">
                 <li><a href="{{ route('all.services') }}">All Services</a></li>
-              <li><a href="{{ route('add.information') }}">Add Services </a></li>
+              <li><a href="{{ route('add.services') }}">Add Services </a></li>
                              
                         </ul>
 
