@@ -94,6 +94,6 @@ Route::get('/edit/{id}',[ProjectController::class, 'EditProject'])->name('edit.p
 
 Route::post('/update/',[ProjectController::class, 'UpdateProject'])->name('project.update');
 
-Route::get('/delete/{id}',[ServiceController::class, 'DeleteService'])->name('delete.service'); 
+Route::get('/delete/{id}',[ProjectController::class, 'DeleteProject'])->name('delete.project'); 
 
 });
