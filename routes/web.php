@@ -71,9 +71,9 @@ Route::get('/add',[ServiceController::class, 'AddService'])->name('add.services'
 
 Route::post('/store',[ServiceController::class, 'StoreService'])->name('service.store');
 
-Route::get('/edit/{id}',[InformationController::class, 'EditInformation'])->name('edit.information');
+Route::get('/edit/{id}',[ServiceController::class, 'EditService'])->name('edit.service');
 
-Route::post('/update/{id}',[InformationController::class, 'UpdateInformation'])->name('information.update');
+Route::post('/update/',[ServiceController::class, 'UpdateService'])->name('service.update');
 
 Route::get('/delete/{id}',[InformationController::class, 'DeleteInformation'])->name('delete.information'); 
 

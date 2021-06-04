@@ -63,5 +63,61 @@ class ServiceController extends Controller
 
     } // end method 
 
+
+
+    public function EditService($id){
+
+    	$services = Services::findOrFail($id);
+    	return view('backend.service.edit_service',compact('services'));
+
+    } // end method 
+
+
+    public function UpdateService(Request $request){
+
+    	$service_id = $request->id;
+
+    	if ($request->file('service_logo')) {
+
+    		$image = $request->file('service_logo'); 
+    	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+    	Image::make($image)->resize(512,512)->save('upload/service/'.$name_gen);
+    	$save_url = 'http://127.0.0.1:8000/upload/service/'.$name_gen;
+
+    	Services::findOrFail($service_id)->update([
+
+    		'service_name' => $request->service_name,
+    		'service_discription' => $request->service_description,
+    		'service_logo' => $save_url,
+    	]);
+
+    	 $notification = array(
+    		'message' => 'Service Updated Successfully',
+    		'alert-type' => 'success'
+    	);
+
+    	return redirect()->route('all.services')->with($notification);
+    		 
+
+    	}else{
+
+    		Services::findOrFail($service_id)->update([
+
+    		'service_name' => $request->service_name,
+    		'service_discription' => $request->service_description,
+    		 
+    	]);
+
+    	 $notification = array(
+    		'message' => 'Service Updated Without Image Successfully',
+    		'alert-type' => 'success'
+    	);
+
+    	return redirect()->route('all.services')->with($notification);
+    	}
+
+
+    } // end method 
+
    
 }
