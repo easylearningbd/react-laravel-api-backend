@@ -27,7 +27,7 @@ Route::post('/contactsend',[ContactController::class, 'onContactSend']);
 // Course All Routes 
 Route::get('/coursehome',[CoursesController::class, 'onSelectFour']);
 Route::get('/courseall',[CoursesController::class, 'onSelectAll']);
-Route::post('/coursedetails',[CoursesController::class, 'OnSelectDetails']);
+Route::get('/coursedetails/{courseId}',[CoursesController::class, 'OnSelectDetails']);
 
 // Footer Route 
 Route::get('/footerdata',[FooterController::class, 'onSelectAll']);
@@ -41,7 +41,7 @@ Route::get('/services',[ServiceController::class, 'ServiceView']);
 // Project All Routes 
 Route::get('/projecthome',[ProjectController::class, 'onSelectThree']);
 Route::get('/projectall',[ProjectController::class, 'onSelectAll']);
-Route::post('/projectdetails',[ProjectController::class, 'ProjectDetails']);
+Route::get('/projectdetails/{projectId}',[ProjectController::class, 'ProjectDetails']);
 
 // Home Etc All Routes 
 Route::get('/home/video',[HomePageEtcController::class, 'SelectVideo']);

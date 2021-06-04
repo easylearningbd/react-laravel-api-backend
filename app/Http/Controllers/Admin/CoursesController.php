@@ -20,11 +20,11 @@ class CoursesController extends Controller
 
     } // end mehtod 
 
-    public function OnSelectDetails(Request $request){
+     public function OnSelectDetails($courseId){
 
-    	$id = $request->input('id');
-    	$result = Courses::where('id',$id)->get();
-    	return $result;
+        $id = $courseId;
+        $result = Courses::where('id',$id)->get();
+        return $result;
 
     } // end method 
 

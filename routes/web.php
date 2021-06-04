@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ProjectController;
 
 
 /*
@@ -66,6 +67,24 @@ Route::get('/delete/{id}',[InformationController::class, 'DeleteInformation'])->
 Route::prefix('service')->group(function(){
 
 Route::get('/all',[ServiceController::class, 'AllService'])->name('all.services');
+
+Route::get('/add',[ServiceController::class, 'AddService'])->name('add.services');
+
+Route::post('/store',[ServiceController::class, 'StoreService'])->name('service.store');
+
+Route::get('/edit/{id}',[ServiceController::class, 'EditService'])->name('edit.service');
+
+Route::post('/update/',[ServiceController::class, 'UpdateService'])->name('service.update');
+
+Route::get('/delete/{id}',[ServiceController::class, 'DeleteService'])->name('delete.service'); 
+
+});
+
+
+ // Project All Routes 
+Route::prefix('project')->group(function(){
+
+Route::get('/all',[ProjectController::class, 'AllProject'])->name('all.projects');
 
 Route::get('/add',[ServiceController::class, 'AddService'])->name('add.services');
 
