@@ -119,5 +119,21 @@ class ServiceController extends Controller
 
     } // end method 
 
+
+    public function DeleteService($id){
+
+    	Services::findOrFail($id)->delete();
+
+    	$notification = array(
+    		'message' => 'Service Delected Successfully',
+    		'alert-type' => 'success'
+    	);
+
+    	return redirect()->back()->with($notification);
+
+    } // end mehtod 
+
+
+
    
 }

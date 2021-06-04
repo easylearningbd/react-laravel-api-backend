@@ -75,6 +75,6 @@ Route::get('/edit/{id}',[ServiceController::class, 'EditService'])->name('edit.s
 
 Route::post('/update/',[ServiceController::class, 'UpdateService'])->name('service.update');
 
-Route::get('/delete/{id}',[InformationController::class, 'DeleteInformation'])->name('delete.information'); 
+Route::get('/delete/{id}',[ServiceController::class, 'DeleteService'])->name('delete.service'); 
 
 });
