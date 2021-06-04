@@ -90,9 +90,9 @@ Route::get('/add',[ProjectController::class, 'AddProject'])->name('add.projects'
 
 Route::post('/store',[ProjectController::class, 'StoreProject'])->name('project.store');
 
-Route::get('/edit/{id}',[ServiceController::class, 'EditService'])->name('edit.service');
+Route::get('/edit/{id}',[ProjectController::class, 'EditProject'])->name('edit.project');
 
-Route::post('/update/',[ServiceController::class, 'UpdateService'])->name('service.update');
+Route::post('/update/',[ProjectController::class, 'UpdateProject'])->name('project.update');
 
 Route::get('/delete/{id}',[ServiceController::class, 'DeleteService'])->name('delete.service'); 
 
