@@ -67,7 +67,7 @@
                         </a>
                         <ul aria-expanded="false">
                 <li><a href="{{ route('all.projects') }}">All Projects</a></li>
-              <li><a href="{{ route('add.services') }}">Add Projects </a></li>
+              <li><a href="{{ route('add.projects') }}">Add Projects </a></li>
                              
                         </ul>
 
