@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\CoursesController;
+use App\Http\Controllers\Admin\HomePageEtcController;
 
 
 /*
@@ -107,6 +108,24 @@ Route::prefix('course')->group(function(){
 Route::get('/all',[CoursesController::class, 'AllCourses'])->name('all.courses');
 
 Route::get('/add',[CoursesController::class, 'AddCourses'])->name('add.courses');
+
+Route::post('/store',[CoursesController::class, 'StoreCourses'])->name('courses.store');
+
+Route::get('/edit/{id}',[CoursesController::class, 'EditCourses'])->name('edit.courses');
+
+Route::post('/update/',[CoursesController::class, 'UpdateCourses'])->name('courses.update');
+
+Route::get('/delete/{id}',[CoursesController::class, 'DeleteCourses'])->name('delete.courses'); 
+
+});
+
+
+ // Home Content All Routes 
+Route::prefix('home')->group(function(){
+
+Route::get('/all',[HomePageEtcController::class, 'AllHomeContent'])->name('all.home.content');
+
+Route::get('/add',[HomePageEtcController::class, 'AddHomeContent'])->name('add.home.content');
 
 Route::post('/store',[CoursesController::class, 'StoreCourses'])->name('courses.store');
 

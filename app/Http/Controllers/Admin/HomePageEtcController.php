@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\HomePageEtc;
 
 class HomePageEtcController extends Controller
-{
+{ 
     public function SelectVideo(){
 
     	$result = HomePageEtc::select('video_desciption','video_url')->get();
@@ -32,6 +32,23 @@ class HomePageEtcController extends Controller
     	$result = HomePageEtc::select('home_title','home_subtitle')->get();
     	return $result;
     } // end method 
+
+
+
+    public function AllHomeContent(){
+
+    $homecontent = HomePageEtc::all();
+        return view('backend.homecontent.all_homecontent',compact('homecontent'));
+    } // end method 
+
+
+    public function AddHomeContent(){
+      return view('backend.homecontent.add_homecontent');
+    } // end method 
+
+
+
+
 
 
 } 
