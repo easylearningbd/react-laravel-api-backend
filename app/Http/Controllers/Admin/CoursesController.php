@@ -29,4 +29,18 @@ class CoursesController extends Controller
     } // end method 
 
 
+
+    public function AllCourses(){
+
+        $courses = Courses::all();
+        return view('backend.courses.all_courses',compact('courses'));
+    } // end mehtod 
+
+
+
+    public function AddCourses(){
+         return view('backend.courses.add_courses');
+    } // end mehtod 
+
+
 } 

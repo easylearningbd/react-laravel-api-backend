@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\CoursesController;
 
 
 /*
@@ -87,6 +88,25 @@ Route::prefix('project')->group(function(){
 Route::get('/all',[ProjectController::class, 'AllProject'])->name('all.projects');
 
 Route::get('/add',[ProjectController::class, 'AddProject'])->name('add.projects');
+
+Route::post('/store',[ProjectController::class, 'StoreProject'])->name('project.store');
+
+Route::get('/edit/{id}',[ProjectController::class, 'EditProject'])->name('edit.project');
+
+Route::post('/update/',[ProjectController::class, 'UpdateProject'])->name('project.update');
+
+Route::get('/delete/{id}',[ProjectController::class, 'DeleteProject'])->name('delete.project'); 
+
+});
+
+
+
+ // Courses All Routes 
+Route::prefix('course')->group(function(){
+
+Route::get('/all',[CoursesController::class, 'AllCourses'])->name('all.courses');
+
+Route::get('/add',[CoursesController::class, 'AddCourses'])->name('add.courses');
 
 Route::post('/store',[ProjectController::class, 'StoreProject'])->name('project.store');
 
