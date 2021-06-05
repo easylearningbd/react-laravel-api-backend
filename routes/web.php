@@ -129,10 +129,10 @@ Route::get('/add',[HomePageEtcController::class, 'AddHomeContent'])->name('add.h
 
 Route::post('/store',[HomePageEtcController::class, 'StoreHomeContent'])->name('homecontent.store');
 
-Route::get('/edit/{id}',[CoursesController::class, 'EditCourses'])->name('edit.courses');
+Route::get('/edit/{id}',[HomePageEtcController::class, 'EditHomeContent'])->name('edit.homecontent');
 
-Route::post('/update/',[CoursesController::class, 'UpdateCourses'])->name('courses.update');
+Route::post('/update/',[HomePageEtcController::class, 'UpdateHomeContent'])->name('homecontent.update');
 
-Route::get('/delete/{id}',[CoursesController::class, 'DeleteCourses'])->name('delete.courses'); 
+Route::get('/delete/{id}',[HomePageEtcController::class, 'DeleteHomeContent'])->name('delete.homecontent'); 
 
 });

@@ -83,5 +83,52 @@ class HomePageEtcController extends Controller
     } // end method 
 
 
+    public function EditHomeContent($id){
+
+        $homecontent = HomePageEtc::findOrFail($id);
+        return view('backend.homecontent.edit_homecontent',compact('homecontent'));
+
+    } // end method 
+
+    public function UpdateHomeContent(Request $request){
+
+        $home_id = $request->id;
+
+        HomePageEtc::findOrFail($home_id)->update([
+            'home_title' => $request->home_title,
+            'home_subtitle' => $request->home_subtitle,
+            'tech_description' => $request->tech_description,
+            'total_student' => $request->total_student,
+            'total_course' => $request->total_course,
+            'total_review' => $request->total_review,
+            'video_desciption' => $request->video_desciption,
+            'video_url' => $request->video_url,            
+             
+        ]);
+
+         $notification = array(
+            'message' => 'Home Content Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.home.content')->with($notification);
+
+
+    } // end method 
+
+
+    public function DeleteHomeContent($id){
+
+         HomePageEtc::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Home Content Delected Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    }// end method 
+
 
 } 
