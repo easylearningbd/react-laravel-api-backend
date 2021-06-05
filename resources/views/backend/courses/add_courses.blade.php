@@ -48,7 +48,7 @@
                             <div class="card-body">
                                 <div class="basic-form">
 
-        <form method="post" action="{{ route('service.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('courses.store') }}" enctype="multipart/form-data">
         	@csrf
 
             <div class="form-group">
@@ -134,7 +134,7 @@
 
 
   <div class="form-group">
-                <label class="info-title">Long Description</label>
+                <label class="info-title">Skill All</label>
                <textarea class="form-control" name="skill_all" id="summernote3"></textarea>
             </div>
 

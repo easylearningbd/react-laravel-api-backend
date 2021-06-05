@@ -108,7 +108,7 @@ Route::get('/all',[CoursesController::class, 'AllCourses'])->name('all.courses')
 
 Route::get('/add',[CoursesController::class, 'AddCourses'])->name('add.courses');
 
-Route::post('/store',[ProjectController::class, 'StoreProject'])->name('project.store');
+Route::post('/store',[CoursesController::class, 'StoreCourses'])->name('courses.store');
 
 Route::get('/edit/{id}',[ProjectController::class, 'EditProject'])->name('edit.project');
 
