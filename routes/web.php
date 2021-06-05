@@ -110,10 +110,10 @@ Route::get('/add',[CoursesController::class, 'AddCourses'])->name('add.courses')
 
 Route::post('/store',[CoursesController::class, 'StoreCourses'])->name('courses.store');
 
-Route::get('/edit/{id}',[ProjectController::class, 'EditProject'])->name('edit.project');
+Route::get('/edit/{id}',[CoursesController::class, 'EditCourses'])->name('edit.courses');
 
-Route::post('/update/',[ProjectController::class, 'UpdateProject'])->name('project.update');
+Route::post('/update/',[CoursesController::class, 'UpdateCourses'])->name('courses.update');
 
-Route::get('/delete/{id}',[ProjectController::class, 'DeleteProject'])->name('delete.project'); 
+Route::get('/delete/{id}',[CoursesController::class, 'DeleteCourses'])->name('delete.courses'); 
 
 });

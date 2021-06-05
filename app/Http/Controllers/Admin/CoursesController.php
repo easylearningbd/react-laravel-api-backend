@@ -84,4 +84,87 @@ class CoursesController extends Controller
     } // end method 
 
 
+    public function EditCourses($id){
+
+        $courses = Courses::findOrFail($id);
+        return view('backend.courses.edit_courses',compact('courses'));
+
+    } // end method 
+
+
+    public function UpdateCourses(Request $request){
+
+
+        $course_id = $request->id;
+
+        if ($request->file('small_img')) {
+
+        $image = $request->file('small_img'); 
+        $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+        Image::make($image)->resize(626,417)->save('upload/courses/'.$name_gen);
+        $save_url = 'http://127.0.0.1:8000/upload/courses/'.$name_gen;
+
+        Courses::findOrFail($course_id)->update([
+
+            'short_title' => $request->short_title,
+            'short_description' => $request->short_description,
+            'long_title' => $request->long_title,
+            'long_description' => $request->long_description,
+            'total_duration' => $request->total_duration,
+            'total_lecture' => $request->total_lecture,
+            'total_student' => $request->total_student,
+            'skill_all' => $request->skill_all,
+            'video_url' => $request->video_url,
+            'small_img' => $save_url,
+        ]);
+
+         $notification = array(
+            'message' => 'Course Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.courses')->with($notification);
+             
+
+        }else{
+
+            Courses::findOrFail($course_id)->update([
+
+            'short_title' => $request->short_title,
+            'short_description' => $request->short_description,
+            'long_title' => $request->long_title,
+            'long_description' => $request->long_description,
+            'total_duration' => $request->total_duration,
+            'total_lecture' => $request->total_lecture,
+            'total_student' => $request->total_student,
+            'skill_all' => $request->skill_all,
+            'video_url' => $request->video_url,
+            
+        ]);
+
+         $notification = array(
+            'message' => 'Course Updated Without Image Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.courses')->with($notification);
+        }
+
+    } // end method 
+
+
+    public function DeleteCourses($id){
+
+        Courses::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Courses Delected Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+
+    } // end method 
+
+
 } 
