@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\HomePageEtcController;
 use App\Http\Controllers\Admin\ClientReviewController;
+use App\Http\Controllers\Admin\FooterController;
 
 
 /*
@@ -143,6 +144,24 @@ Route::get('/delete/{id}',[HomePageEtcController::class, 'DeleteHomeContent'])->
 Route::prefix('review')->group(function(){
 
 Route::get('/all',[ClientReviewController::class, 'AllReview'])->name('all.review');
+
+Route::get('/add',[ClientReviewController::class, 'AddReview'])->name('add.review');
+
+Route::post('/store',[ClientReviewController::class, 'StoreReview'])->name('review.store');
+
+Route::get('/edit/{id}',[ClientReviewController::class, 'EditReview'])->name('edit.review');
+
+Route::post('/update/',[ClientReviewController::class, 'UpdateReview'])->name('review.update');
+
+Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
+
+});
+
+
+ // Footer Conten All Routes 
+Route::prefix('footer')->group(function(){
+
+Route::get('/all',[FooterController::class, 'AllFooterContent'])->name('all.footer.content');
 
 Route::get('/add',[ClientReviewController::class, 'AddReview'])->name('add.review');
 

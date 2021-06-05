@@ -14,4 +14,14 @@ class FooterController extends Controller
     	return $result;
 
     } // end mehtod 
+
+
+    public function AllFooterContent(){
+    	$footer = Footer::all();
+    	return view('backend.footer.all_footer',compact('footer'));
+    } // end mehtod 
+
+
+
+
 }
