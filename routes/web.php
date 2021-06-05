@@ -163,13 +163,9 @@ Route::prefix('footer')->group(function(){
 
 Route::get('/all',[FooterController::class, 'AllFooterContent'])->name('all.footer.content');
 
-Route::get('/add',[ClientReviewController::class, 'AddReview'])->name('add.review');
+Route::get('/edit/{id}',[FooterController::class, 'EditFooterContent'])->name('edit.footer');
 
-Route::post('/store',[ClientReviewController::class, 'StoreReview'])->name('review.store');
-
-Route::get('/edit/{id}',[ClientReviewController::class, 'EditReview'])->name('edit.review');
-
-Route::post('/update/',[ClientReviewController::class, 'UpdateReview'])->name('review.update');
+Route::post('/update/',[FooterController::class, 'UpdateFooterContent'])->name('footer.update');
 
 Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
 
