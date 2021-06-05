@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\CoursesController;
 use App\Http\Controllers\Admin\HomePageEtcController;
 use App\Http\Controllers\Admin\ClientReviewController;
 use App\Http\Controllers\Admin\FooterController;
+use App\Http\Controllers\Admin\ChartController;
 
 
 /*
@@ -158,10 +159,24 @@ Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name
 });
 
 
- // Footer Conten All Routes 
+ // Footer Content All Routes 
 Route::prefix('footer')->group(function(){
 
 Route::get('/all',[FooterController::class, 'AllFooterContent'])->name('all.footer.content');
+
+Route::get('/edit/{id}',[FooterController::class, 'EditFooterContent'])->name('edit.footer');
+
+Route::post('/update/',[FooterController::class, 'UpdateFooterContent'])->name('footer.update');
+
+Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
+
+});
+
+
+ // Chart Content All Routes 
+Route::prefix('chart')->group(function(){
+
+Route::get('/all',[ChartController::class, 'AllChartContent'])->name('all.chart.content');
 
 Route::get('/edit/{id}',[FooterController::class, 'EditFooterContent'])->name('edit.footer');
 

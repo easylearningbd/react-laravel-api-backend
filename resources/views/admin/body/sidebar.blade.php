@@ -125,6 +125,20 @@
                         </ul>
 
                     </li>
+
+
+
+                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                          <i class="flaticon-053-heart"></i>
+                            <span class="nav-text">Chart Content </span>
+                        </a>
+                        <ul aria-expanded="false">
+                <li><a href="{{ route('all.chart.content') }}">All Chart Content</a></li>
+              
+                             
+                        </ul>
+
+                    </li>
                     
                      
                    

@@ -15,5 +15,11 @@ class ChartController extends Controller
     } // end method 
 
 
+    public function AllChartContent(){
+        $chart = Chart::all();
+    	return view('backend.chart.all_chart',compact('chart'));
+    } // end method 
+
+
 }
  
