@@ -178,9 +178,9 @@ Route::prefix('chart')->group(function(){
 
 Route::get('/all',[ChartController::class, 'AllChartContent'])->name('all.chart.content');
 
-Route::get('/edit/{id}',[FooterController::class, 'EditFooterContent'])->name('edit.footer');
+Route::get('/edit/{id}',[ChartController::class, 'EditChartContent'])->name('edit.chart');
 
-Route::post('/update/',[FooterController::class, 'UpdateFooterContent'])->name('footer.update');
+Route::post('/update/',[ChartController::class, 'UpdateChartContent'])->name('chart.update');
 
 Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
 

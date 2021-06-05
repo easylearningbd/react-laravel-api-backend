@@ -21,5 +21,33 @@ class ChartController extends Controller
     } // end method 
 
 
+    public function EditChartContent($id){
+    	$chart = Chart::findOrFail($id);
+    	return view('backend.chart.edit_chart',compact('chart'));
+
+    } // end method 
+
+
+    public function UpdateChartContent(Request $request){
+
+    		$chart_id = $request->id;
+
+    	Chart::findOrFail($chart_id)->update([
+
+    		'Techonology' => $request->Techonology,
+    		'Projects' => $request->Projects,
+    		 
+    		 
+    	]);
+
+    	 $notification = array(
+    		'message' => 'Chart Updated Successfully',
+    		'alert-type' => 'success'
+    	);
+
+    	return redirect()->route('all.chart.content')->with($notification);
+
+    } // end method 
+
 }
  
