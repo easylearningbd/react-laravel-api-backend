@@ -148,10 +148,10 @@ Route::get('/add',[ClientReviewController::class, 'AddReview'])->name('add.revie
 
 Route::post('/store',[ClientReviewController::class, 'StoreReview'])->name('review.store');
 
-Route::get('/edit/{id}',[HomePageEtcController::class, 'EditHomeContent'])->name('edit.homecontent');
+Route::get('/edit/{id}',[ClientReviewController::class, 'EditReview'])->name('edit.review');
 
-Route::post('/update/',[HomePageEtcController::class, 'UpdateHomeContent'])->name('homecontent.update');
+Route::post('/update/',[ClientReviewController::class, 'UpdateReview'])->name('review.update');
 
-Route::get('/delete/{id}',[HomePageEtcController::class, 'DeleteHomeContent'])->name('delete.homecontent'); 
+Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
 
 });

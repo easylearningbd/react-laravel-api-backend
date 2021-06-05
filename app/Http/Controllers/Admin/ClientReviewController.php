@@ -58,6 +58,73 @@ class ClientReviewController extends Controller
     } // end method 
 
 
+    public function EditReview($id){
+
+    	$review = ClientReview::findOrFail($id);
+    	return view('backend.review.edit_review',compact('review'));
+
+    } // end method 
+
+
+    public function UpdateReview(Request $request){
+
+    	$review_id = $request->id;
+
+    	if ($request->file('client_img')) {
+
+    	$image = $request->file('client_img'); 
+    	$name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+    	Image::make($image)->resize(626,417)->save('upload/review/'.$name_gen);
+    	$save_url = 'http://127.0.0.1:8000/upload/review/'.$name_gen;
+
+    	ClientReview::findOrFail($review_id)->update([
+
+    		'client_title' => $request->client_title,
+    		'client_description' => $request->client_description,
+    		'client_img' => $save_url,
+    	]);
+
+    	 $notification = array(
+    		'message' => 'Review Updated Successfully',
+    		'alert-type' => 'success'
+    	);
+
+    	return redirect()->route('all.review')->with($notification);
+    		 
+
+    	}else{
+
+    		ClientReview::findOrFail($review_id)->update([
+
+    		'client_title' => $request->client_title,
+    		'client_description' => $request->client_description,
+    		 
+    	]);
+
+    	 $notification = array(
+    		'message' => 'Review Updated Without Image Successfully',
+    		'alert-type' => 'success'
+    	);
+
+    	return redirect()->route('all.review')->with($notification);
+    	}
+
+    } // end method 
+
+
+    public function DeleteReview($id){
+
+    	ClientReview::findOrFail($id)->delete();
+
+    	$notification = array(
+    		'message' => 'Review Delected Successfully',
+    		'alert-type' => 'success'
+    	);
+
+    	return redirect()->back()->with($notification);
+
+    } // end method 
+
 
 }
   
