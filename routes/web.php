@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\HomePageEtcController;
 use App\Http\Controllers\Admin\ClientReviewController;
 use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\ChartController;
+use App\Http\Controllers\Admin\ContactController;
 
 
 /*
@@ -185,3 +186,8 @@ Route::post('/update/',[ChartController::class, 'UpdateChartContent'])->name('ch
 Route::get('/delete/{id}',[ClientReviewController::class, 'DeleteReview'])->name('delete.review'); 
 
 });
+
+
+Route::get('/all',[ContactController::class, 'AllContactMessage'])->name('contact.message');
+
+Route::get('/delete/message/{id}',[ContactController::class, 'DeleteContactMessage'])->name('delete.message'); 

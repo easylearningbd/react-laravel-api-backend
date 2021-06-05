@@ -142,9 +142,9 @@
                     
                      
                    
-                    <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
+                    <li><a href="{{ route('contact.message') }}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-settings-2"></i>
-							<span class="nav-text">Widget</span>
+							<span class="nav-text">Contact Message</span>
 						</a>
 					</li>
                      
