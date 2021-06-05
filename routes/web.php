@@ -146,7 +146,7 @@ Route::get('/all',[ClientReviewController::class, 'AllReview'])->name('all.revie
 
 Route::get('/add',[ClientReviewController::class, 'AddReview'])->name('add.review');
 
-Route::post('/store',[HomePageEtcController::class, 'StoreHomeContent'])->name('homecontent.store');
+Route::post('/store',[ClientReviewController::class, 'StoreReview'])->name('review.store');
 
 Route::get('/edit/{id}',[HomePageEtcController::class, 'EditHomeContent'])->name('edit.homecontent');
 

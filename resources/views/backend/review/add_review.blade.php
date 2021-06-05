@@ -48,7 +48,7 @@
                             <div class="card-body">
                                 <div class="basic-form">
 
-        <form method="post" action="{{ route('service.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('review.store') }}" enctype="multipart/form-data">
         	@csrf
 
             <div class="form-group">
