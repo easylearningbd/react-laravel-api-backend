@@ -127,7 +127,7 @@ Route::get('/all',[HomePageEtcController::class, 'AllHomeContent'])->name('all.h
 
 Route::get('/add',[HomePageEtcController::class, 'AddHomeContent'])->name('add.home.content');
 
-Route::post('/store',[CoursesController::class, 'StoreCourses'])->name('courses.store');
+Route::post('/store',[HomePageEtcController::class, 'StoreHomeContent'])->name('homecontent.store');
 
 Route::get('/edit/{id}',[CoursesController::class, 'EditCourses'])->name('edit.courses');
 

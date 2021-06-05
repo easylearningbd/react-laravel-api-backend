@@ -47,7 +47,40 @@ class HomePageEtcController extends Controller
     } // end method 
 
 
+    public function StoreHomeContent(Request $request){
 
+        $request->validate([
+            'home_title' => 'required',
+            'home_subtitle' => 'required',
+             
+        ],[
+            'home_title.required' => 'Input Home Title Name',
+            'home_subtitle.required' => 'Input Home Sub Title',
+
+        ]);
+
+        
+
+        HomePageEtc::insert([
+            'home_title' => $request->home_title,
+            'home_subtitle' => $request->home_subtitle,
+            'tech_description' => $request->tech_description,
+            'total_student' => $request->total_student,
+            'total_course' => $request->total_course,
+            'total_review' => $request->total_review,
+            'video_desciption' => $request->video_desciption,
+            'video_url' => $request->video_url,            
+             
+        ]);
+
+         $notification = array(
+            'message' => 'Home Content Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.home.content')->with($notification);
+
+    } // end method 
 
 
 

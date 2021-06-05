@@ -47,7 +47,7 @@
                             <div class="card-body">
                                 <div class="basic-form">
 
-        <form method="post" action="{{ route('service.store') }}" enctype="multipart/form-data">
+        <form method="post" action="{{ route('homecontent.store') }}" >
         	@csrf
 
             <div class="form-group">
